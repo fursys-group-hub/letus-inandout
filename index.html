@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ══ 핵심: 브라우저가 Apps Script URL로 자동 이동 ══ -->
+<!-- 여기에_Apps_Script_URL을 실제 URL로 교체하세요 -->
+<meta http-equiv="refresh" content="0;url=https://script.google.com/macros/s/AKfycbxjFQpi5Jzosq0GUhiE1L4ENB4_c3nqEWP8bvBoGGbRfx1xhJCYMV-ZXEjywu6j7tfA1Q/exec">
+
+<title>LETUS 근태관리</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body {
+    height: 100%; background: #3D3D3D;
+    font-family: 'Noto Sans KR', sans-serif;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .wrap { text-align: center; padding: 40px 24px; }
+  .brand {
+    font-size: 48px; font-weight: 900; color: #fff;
+    letter-spacing: 6px; margin-bottom: 12px;
+    font-family: Georgia, serif;
+  }
+  .sub { font-size: 13px; color: #888; letter-spacing: 2px; margin-bottom: 40px; }
+  .spinner {
+    width: 36px; height: 36px; margin: 0 auto 20px;
+    border: 3px solid rgba(255,255,255,.15);
+    border-top-color: #fff; border-radius: 50%;
+    animation: spin .8s linear infinite;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .msg { font-size: 13px; color: #666; margin-bottom: 16px; }
+  .manual-link {
+    display: inline-block; margin-top: 8px;
+    font-size: 13px; color: #aaa; text-decoration: underline; cursor: pointer;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="brand">LETUS</div>
+  <div class="sub">근태관리 시스템</div>
+  <div class="spinner"></div>
+  <div class="msg">앱으로 이동 중...</div>
+  <a class="manual-link" id="manual-link">자동으로 이동하지 않으면 여기를 탭하세요</a>
+</div>
+
+<script>
+  const APP_URL = "https://script.google.com/macros/s/AKfycbxjFQpi5Jzosq0GUhiE1L4ENB4_c3nqEWP8bvBoGGbRfx1xhJCYMV-ZXEjywu6j7tfA1Q/exec"; // ← 필수 변경
+  document.getElementById('manual-link').href = APP_URL;
+
+  // meta refresh 백업 — 혹시 meta refresh가 안 될 경우 JS로도 이동
+  setTimeout(() => { window.location.replace(APP_URL); }, 300);
+</script>
+</body>
+</html>
