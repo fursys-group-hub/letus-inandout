@@ -10,7 +10,7 @@
 <meta name="apple-mobile-web-app-title" content="LETUS">
 <meta name="theme-color" content="#3D3D3D">
 <meta name="application-name" content="LETUS 근태관리">
-<link rel="manifest" href="https://fg-haeri-park.github.io/letus-app/manifest.json">
+<link rel="manifest" href="https://fursys-group-hub.github.io/letus-inandout/manifest.json">
 <title>LETUS 근태관리</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@900&family=Noto+Sans+KR:wght@300;400;500;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -845,7 +845,7 @@ function switchTab(name) {
 
 // ── 관리자 이동 ───────────────────────────────────
 function goAdmin() {
-  const url = 'https://fg-haeri-park.github.io/letus-app/admin.html?adminId=' + encodeURIComponent(emp.empId);
+  const url = 'https://fursys-group-hub.github.io/letus-inandout/admin.html?adminId=' + encodeURIComponent(emp.empId);
   window.open(url, '_blank');
 }
 
@@ -899,7 +899,7 @@ function toast(msg, type = '') {
 // ── PWA: Service Worker 등록 ──────────────────────────
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
-    navigator.serviceWorker.register('https://fg-haeri-park.github.io/letus-app/sw.js').catch(() => {});
+    navigator.serviceWorker.register('https://fursys-group-hub.github.io/letus-inandout/sw.js').catch(() => {});
   });
 }
 
